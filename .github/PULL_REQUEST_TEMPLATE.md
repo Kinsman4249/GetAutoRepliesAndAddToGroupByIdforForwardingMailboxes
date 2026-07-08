@@ -9,14 +9,14 @@
 
 - [ ] Bug fix (non-breaking change that fixes an issue)
 - [ ] New feature (non-breaking change that adds functionality)
-- [ ] Breaking change (fix or feature that would change existing behavior — e.g. parameter rename, CSV column rename/removal)
+- [ ] Breaking change (fix or feature that would change existing behavior - e.g. parameter rename, CSV column rename/removal)
 - [ ] Documentation only
 
 ## Testing
 
 How did you verify this works?
 
-- [ ] Ran `Invoke-ScriptAnalyzer` against modified `.ps1` files — clean
+- [ ] Ran `Invoke-ScriptAnalyzer` against modified `.ps1` files - clean
 - [ ] Tested against a non-production tenant
 - [ ] Verified the CSV report contains the expected columns and values
 - [ ] Confirmed expected behavior for the happy path

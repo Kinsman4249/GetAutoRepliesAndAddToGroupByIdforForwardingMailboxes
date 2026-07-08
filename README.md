@@ -1,6 +1,6 @@
 # GetAutoRepliesAndAddToGroupByIdforForwardingMailboxes
 
-PowerShell script to find Exchange Online mailboxes with Automatic Replies enabled and forwarding configured, then add them to a specified Entra ID group. Uses Exchange Online cmdlets first and only falls back to Microsoft Graph REST calls if required — no Graph SDK modules needed.
+PowerShell script to find Exchange Online mailboxes with Automatic Replies enabled and forwarding configured, then add them to a specified Entra ID group. Uses Exchange Online cmdlets first and only falls back to Microsoft Graph REST calls if required - no Graph SDK modules needed.
 
 ## Requirements
 
@@ -51,9 +51,9 @@ PowerShell script to find Exchange Online mailboxes with Automatic Replies enabl
 2. **Enumerates all mailboxes** of the specified type(s) and pulls forwarding properties (`ForwardingAddress`, `ForwardingSmtpAddress`, `DeliverToMailboxAndForward`).
 3. **Filters to forwarding-enabled mailboxes only**, then checks each for Automatic Replies (`Enabled` or `Scheduled`) via `Get-MailboxAutoReplyConfiguration`.
 4. **Determines the best method** to add members to the target group:
-   - **Microsoft 365 (Unified) group** — uses `Add-UnifiedGroupLinks`
-   - **Distribution / mail-enabled security group** — uses `Add-DistributionGroupMember`
-   - **Security group / not resolvable via EXO** — falls back to direct Microsoft Graph REST calls using device code authentication (no Graph SDK modules required)
+   - **Microsoft 365 (Unified) group** - uses `Add-UnifiedGroupLinks`
+   - **Distribution / mail-enabled security group** - uses `Add-DistributionGroupMember`
+   - **Security group / not resolvable via EXO** - falls back to direct Microsoft Graph REST calls using device code authentication (no Graph SDK modules required)
 5. **Adds matched users** to the group. Already-existing members are handled gracefully.
 6. **Exports a CSV report** with matched mailboxes, forwarding details, and the result of each group membership operation.
 
